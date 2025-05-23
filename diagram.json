@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 106.2, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -128,
+      "left": 82.4,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 142, "left": 547.2, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": 282.6, "left": 585.7, "attrs": {} }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno:GND.2", "black", [ "h-163.2", "v470.4", "h259.2" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-144", "v451.3", "h211.2" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "cyan", [ "h-48", "v163.4", "h57.6" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "magenta", [ "h-28.8", "v163.5", "h28.8" ] ],
+    [ "servo1:GND", "uno:GND.2", "black", [ "h-9.6", "v182.4", "h-374.4" ] ],
+    [ "uno:5V", "servo1:V+", "red", [ "v67.1", "h368.6", "v-163.2" ] ],
+    [ "servo1:PWM", "uno:11", "green", [ "h-76.8", "v-134.2", "h-326.4" ] ],
+    [ "uno:GND.2", "rtc1:GND", "black", [ "v76.7", "h368.7", "v-86.4" ] ],
+    [ "uno:5V", "rtc1:5V", "red", [ "v67.1", "h368.6", "v-57.6" ] ],
+    [ "uno:A5", "rtc1:SCL", "magenta", [ "v0" ] ],
+    [ "uno:A4", "rtc1:SDA", "yellow", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
